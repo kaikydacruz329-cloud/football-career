@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Football Career Simulator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ============================= -->
+    <!-- TELA DE CRIAÇÃO -->
+    <!-- ============================= -->
+
+    <div id="telaCriacao" class="tela">
+
+        <div class="criacao">
+
+            <div class="logo">
+                FOOTBALL<br>
+                <span>CAREER</span>
+            </div>
+
+            <h1>Crie seu jogador</h1>
+
+            <p class="descricao">
+                Crie seu jogador e viva uma carreira completa no futebol.
+            </p>
+
+            <div class="formulario">
+
+                <div class="campo">
+                    <label>Nome do jogador</label>
+                    <input
+                        type="text"
+                        id="nome"
+                        placeholder="Ex: João Silva"
+                    >
+                </div>
+
+                <div class="linha">
+
+                    <div class="campo">
+                        <label>Idade</label>
+
+                        <select id="idade">
+                            <option value="16">16 anos</option>
+                            <option value="17">17 anos</option>
+                            <option value="18">18 anos</option>
+                            <option value="19">19 anos</option>
+                            <option value="20">20 anos</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label>Posição</label>
+
+                        <select id="posicao">
+
+                            <option value="ATA">
+                                Atacante
+                            </option>
+
+                            <option value="MEI">
+                                Meio-campista
+                            </option>
+
+                            <option value="PE">
+                                Ponta Esquerda
+                            </option>
+
+                            <option value="PD">
+                                Ponta Direita
+                            </option>
+
+                            <option value="VOL">
+                                Volante
+                            </option>
+
+                            <option value="ZAG">
+                                Zagueiro
+                            </option>
+
+                            <option value="LE">
+                                Lateral Esquerdo
+                            </option>
+
+                            <option value="LD">
+                                Lateral Direito
+                            </option>
+
+                            <option value="GOL">
+                                Goleiro
+                            </option>
+
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label>País</label>
+
+                    <select id="pais">
+
+                        <option value="Brasil">
+                            🇧🇷 Brasil
+                        </option>
+
+                        <option value="Argentina">
+                            🇦🇷 Argentina
+                        </option>
+
+                        <option value="Portugal">
+                            🇵🇹 Portugal
+                        </option>
+
+                        <option value="Espanha">
+                            🇪🇸 Espanha
+                        </option>
+
+                        <option value="Inglaterra">
+                            🏴 Inglaterra
+                        </option>
+
+                        <option value="França">
+                            🇫🇷 França
+                        </option>
+
+                        <option value="Alemanha">
+                            🇩🇪 Alemanha
+                        </option>
+
+                        <option value="Itália">
+                            🇮🇹 Itália
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label>Clube inicial</label>
+
+                    <select id="clube">
+
+                        <option value="Corinthians">
+                            Corinthians
+                        </option>
+
+                        <option value="Palmeiras">
+                            Palmeiras
+                        </option>
+
+                        <option value="Flamengo">
+                            Flamengo
+                        </option>
+
+                        <option value="Santos">
+                            Santos
+                        </option>
+
+                        <option value="São Paulo">
+                            São Paulo
+                        </option>
+
+                        <option value="Grêmio">
+                            Grêmio
+                        </option>
+
+                        <option value="Internacional">
+                            Internacional
+                        </option>
+
+                        <option value="Cruzeiro">
+                            Cruzeiro
+                        </option>
+
+                        <option value="Real Madrid">
+                            Real Madrid
+                        </option>
+
+                        <option value="Barcelona">
+                            Barcelona
+                        </option>
+
+                        <option value="Manchester City">
+                            Manchester City
+                        </option>
+
+                        <option value="Liverpool">
+                            Liverpool
+                        </option>
+
+                        <option value="Bayern">
+                            Bayern de Munique
+                        </option>
+
+                        <option value="PSG">
+                            PSG
+                        </option>
+
+                        <option value="Milan">
+                            Milan
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    class="botao-principal"
+                    onclick="criarJogador()"
+                >
+                    COMEÇAR CARREIRA
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- TELA DA CARREIRA -->
+    <!-- ============================= -->
+
+    <div id="telaCarreira" class="tela escondida">
+
+        <header>
+
+            <div class="logo-pequeno">
+                FOOTBALL CAREER
+            </div>
+
+            <button
+                class="botao-secundario"
+                onclick="novoJogo()"
+            >
+                NOVA CARREIRA
+            </button>
+
+        </header>
+
+
+        <main>
+
+            <!-- PERFIL -->
+
+            <section class="perfil">
+
+                <div class="avatar">
+
+                    <span id="avatarPosicao">
+                        ⚽
+                    </span>
+
+                </div>
+
+
+                <div class="perfil-info">
+
+                    <span class="tag">
+                        CARREIRA PROFISSIONAL
+                    </span>
+
+                    <h1 id="nomeJogador">
+                        Jogador
+                    </h1>
+
+                    <p id="posicaoJogador">
+                        Atacante
+                    </p>
+
+                    <div class="informacoes">
+
+                        <div>
+                            <span>IDADE</span>
+                            <strong id="idadeJogador">
+                                16
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>PAÍS</span>
+                            <strong id="paisJogador">
+                                Brasil
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>CLUBE</span>
+                            <strong id="clubeJogador">
+                                Corinthians
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="overall">
+
+                    <span>OVR</span>
+
+                    <strong id="overall">
+                        65
+                    </strong>
+
+                </div>
+
+            </section>
+
+
+            <!-- TEMPORADA -->
+
+            <section class="temporada">
+
+                <div>
+
+                    <span class="label">
+                        TEMPORADA
+                    </span>
+
+                    <h2 id="temporada">
+                        2026/27
+                    </h2>
+
+                </div>
+
+
+                <button
+                    id="botaoSimular"
+                    class="botao-simular"
+                    onclick="simularTemporada()"
+                >
+                    ▶ SIMULAR TEMPORADA
+                </button>
+
+            </section>
+
+
+            <!-- ESTATÍSTICAS -->
+
+            <section>
+
+                <h2 class="titulo-secao">
+                    ESTATÍSTICAS DA CARREIRA
+                </h2>
+
+
+                <div class="estatisticas">
+
+                    <div class="stat">
+
+                        <span>JOGOS</span>
+
+                        <strong id="jogos">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <span>GOLS</span>
+
+                        <strong id="gols">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <span>ASSISTÊNCIAS</span>
+
+                        <strong id="assistencias">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <span>TÍTULOS</span>
+
+                        <strong id="titulos">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <span>PRÊMIOS</span>
+
+                        <strong id="premios">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <span>VALOR</span>
+
+                        <strong id="valor">
+                            € 1M
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- RESULTADO DA TEMPORADA -->
+
+            <section id="resultado" class="resultado escondido">
+
+                <div class="resultado-topo">
+
+                    <div>
+
+                        <span class="label">
+                            RESULTADO DA TEMPORADA
+                        </span>
+
+                        <h2 id="resultadoTitulo">
+                            Grande temporada!
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="resultado-estatisticas">
+
+                    <div>
+                        <span>JOGOS</span>
+                        <strong id="temporadaJogos">
+                            0
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>GOLS</span>
+                        <strong id="temporadaGols">
+                            0
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>ASSISTÊNCIAS</span>
+                        <strong id="temporadaAssistencias">
+                            0
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>NOTA</span>
+                        <strong id="temporadaNota">
+                            7.0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="acontecimentos"
+                    class="acontecimentos"
+                ></div>
+
+            </section>
+
+
+            <!-- HISTÓRICO -->
+
+            <section>
+
+                <h2 class="titulo-secao">
+                    HISTÓRICO DA CARREIRA
+                </h2>
+
+                <div
+                    id="historico"
+                    class="historico"
+                >
+
+                    <p class="vazio">
+                        Sua carreira ainda não possui temporadas.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- CLUBES -->
+
+            <section>
+
+                <h2 class="titulo-secao">
+                    CLUBES
+                </h2>
+
+                <div
+                    id="clubes"
+                    class="clubes"
+                ></div>
+
+            </section>
+
+
+            <!-- TÍTULOS -->
+
+            <section>
+
+                <h2 class="titulo-secao">
+                    TÍTULOS E PRÊMIOS
+                </h2>
+
+                <div class="conquistas">
+
+                    <div>
+
+                        <h3>
+                            🏆 Títulos coletivos
+                        </h3>
+
+                        <ul id="listaTitulos">
+                            <li>Nenhum título ainda.</li>
+                        </ul>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            🥇 Prêmios individuais
+                        </h3>
+
+                        <ul id="listaPremios">
+                            <li>Nenhum prêmio ainda.</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <footer>
+
+            <p>
+                FOOTBALL CAREER SIMULATOR
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,812 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #06080d,
+            #111827
+        );
+
+    color: #ffffff;
+
+    min-height: 100vh;
+}
+
+
+/* =========================
+   GERAL
+========================= */
+
+button,
+select,
+input {
+    font-family: inherit;
+}
+
+.escondido {
+    display: none !important;
+}
+
+
+/* =========================
+   TELA DE CRIAÇÃO
+========================= */
+
+.tela {
+    min-height: 100vh;
+}
+
+#telaCriacao {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+}
+
+.criacao {
+    width: 100%;
+    max-width: 600px;
+
+    background: #101722;
+
+    border: 1px solid #263448;
+
+    border-radius: 20px;
+
+    padding: 45px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+.logo {
+    font-size: 35px;
+
+    font-weight: 900;
+
+    line-height: 0.85;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 40px;
+}
+
+.logo span {
+    color: #55e6c1;
+}
+
+.criacao h1 {
+    font-size: 35px;
+
+    margin-bottom: 8px;
+}
+
+.descricao {
+    color: #8b98aa;
+
+    margin-bottom: 35px;
+}
+
+
+/* FORMULÁRIO */
+
+.formulario {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.campo {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.campo label {
+    color: #9aa7b9;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+
+input,
+select {
+    width: 100%;
+
+    background: #080d14;
+
+    border: 1px solid #2a3749;
+
+    color: white;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #55e6c1;
+}
+
+.linha {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+
+/* BOTÕES */
+
+button {
+    cursor: pointer;
+}
+
+.botao-principal {
+    margin-top: 15px;
+
+    border: none;
+
+    background: #55e6c1;
+
+    color: #06100d;
+
+    font-size: 14px;
+
+    font-weight: 900;
+
+    padding: 17px;
+
+    border-radius: 8px;
+
+    transition: 0.2s;
+}
+
+.botao-principal:hover {
+    transform: translateY(-2px);
+
+    filter: brightness(1.1);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: #080c12;
+
+    border-bottom: 1px solid #263448;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 10;
+}
+
+.logo-pequeno {
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+.botao-secundario {
+    background: transparent;
+
+    border: 1px solid #34445b;
+
+    color: #b6c2d1;
+
+    padding: 10px 15px;
+
+    border-radius: 6px;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+main {
+    width: 90%;
+
+    max-width: 1250px;
+
+    margin: auto;
+}
+
+
+/* =========================
+   PERFIL
+========================= */
+
+.perfil {
+    margin-top: 35px;
+
+    min-height: 260px;
+
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            #1c3a42,
+            transparent 45%
+        );
+
+    background-color: #101722;
+
+    border: 1px solid #263448;
+
+    border-radius: 18px;
+
+    padding: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+.avatar {
+    width: 150px;
+
+    height: 180px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1b2738,
+            #283b52
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 55px;
+
+    flex-shrink: 0;
+}
+
+.perfil-info {
+    flex: 1;
+}
+
+.tag {
+    color: #55e6c1;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.perfil-info h1 {
+    font-size: 45px;
+
+    margin: 8px 0;
+}
+
+.perfil-info p {
+    color: #8794a7;
+
+    margin-bottom: 25px;
+}
+
+.informacoes {
+    display: flex;
+
+    gap: 35px;
+}
+
+.informacoes div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.informacoes span {
+    font-size: 10px;
+
+    color: #718096;
+
+    font-weight: bold;
+}
+
+.informacoes strong {
+    font-size: 14px;
+}
+
+.overall {
+    width: 120px;
+
+    height: 120px;
+
+    border: 2px solid #55e6c1;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.overall span {
+    color: #55e6c1;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+.overall strong {
+    font-size: 45px;
+}
+
+
+/* =========================
+   TEMPORADA
+========================= */
+
+.temporada {
+    margin-top: 25px;
+
+    padding: 25px;
+
+    background: #101722;
+
+    border: 1px solid #263448;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.label {
+    color: #738095;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.temporada h2 {
+    margin-top: 5px;
+
+    font-size: 28px;
+}
+
+.botao-simular {
+    border: none;
+
+    background: #55e6c1;
+
+    color: #06100d;
+
+    padding: 16px 25px;
+
+    border-radius: 7px;
+
+    font-weight: 900;
+}
+
+.botao-simular:hover {
+    transform: scale(1.03);
+}
+
+
+/* =========================
+   SEÇÕES
+========================= */
+
+section {
+    margin-bottom: 35px;
+}
+
+.titulo-secao {
+    font-size: 17px;
+
+    margin: 35px 0 18px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   ESTATÍSTICAS
+========================= */
+
+.estatisticas {
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 12px;
+}
+
+.stat {
+    background: #101722;
+
+    border: 1px solid #263448;
+
+    padding: 22px;
+
+    border-radius: 10px;
+}
+
+.stat span {
+    color: #758196;
+
+    font-size: 10px;
+
+    font-weight: bold;
+}
+
+.stat strong {
+    display: block;
+
+    font-size: 30px;
+
+    margin-top: 8px;
+}
+
+
+/* =========================
+   RESULTADO
+========================= */
+
+.resultado {
+    background:
+        linear-gradient(
+            135deg,
+            #12231f,
+            #101722
+        );
+
+    border: 1px solid #2e6255;
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    animation: aparecer 0.5s;
+}
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+.resultado h2 {
+    margin-top: 5px;
+}
+
+.resultado-estatisticas {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin: 25px 0;
+}
+
+.resultado-estatisticas div {
+    background: rgba(0, 0, 0, 0.25);
+
+    padding: 20px;
+
+    border-radius: 8px;
+}
+
+.resultado-estatisticas span {
+    color: #8d9caa;
+
+    font-size: 10px;
+}
+
+.resultado-estatisticas strong {
+    display: block;
+
+    font-size: 27px;
+
+    margin-top: 5px;
+}
+
+.acontecimentos {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.acontecimento {
+    background: rgba(0, 0, 0, 0.2);
+
+    padding: 13px;
+
+    border-radius: 6px;
+
+    color: #cbd5e1;
+}
+
+
+/* =========================
+   HISTÓRICO
+========================= */
+
+.historico {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.temporada-historico {
+    display: grid;
+
+    grid-template-columns:
+        100px 1fr 100px 100px 100px;
+
+    align-items: center;
+
+    background: #101722;
+
+    border: 1px solid #263448;
+
+    padding: 18px;
+
+    border-radius: 8px;
+}
+
+.temporada-historico span {
+    color: #9aa7b9;
+}
+
+.temporada-historico strong {
+    color: white;
+}
+
+
+/* =========================
+   CLUBES
+========================= */
+
+.clubes {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.clube-card {
+    background: #101722;
+
+    border: 1px solid #263448;
+
+    padding: 18px 25px;
+
+    border-radius: 10px;
+
+    min-width: 180px;
+}
+
+.clube-card h3 {
+    margin-bottom: 5px;
+}
+
+.clube-card p {
+    color: #7f8b9e;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   CONQUISTAS
+========================= */
+
+.conquistas {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+.conquistas > div {
+    background: #101722;
+
+    border: 1px solid #263448;
+
+    border-radius: 10px;
+
+    padding: 25px;
+}
+
+.conquistas h3 {
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    padding: 12px 0;
+
+    border-bottom: 1px solid #253041;
+
+    color: #b9c3d0;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    margin-top: 60px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    border-top: 1px solid #263448;
+
+    color: #667387;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 900px) {
+
+    .estatisticas {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .perfil {
+        flex-wrap: wrap;
+    }
+
+    .overall {
+        margin-left: auto;
+    }
+
+    .conquistas {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    main {
+        width: 94%;
+    }
+
+    .criacao {
+        padding: 25px;
+    }
+
+    .linha {
+        grid-template-columns: 1fr;
+    }
+
+    .perfil {
+        padding: 25px;
+
+        text-align: center;
+
+        justify-content: center;
+    }
+
+    .perfil-info h1 {
+        font-size: 32px;
+    }
+
+    .informacoes {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .overall {
+        margin: auto;
+    }
+
+    .temporada {
+        flex-direction: column;
+
+        gap: 20px;
+
+        align-items: stretch;
+    }
+
+    .estatisticas {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .resultado-estatisticas {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .temporada-historico {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+    }
+
+}
